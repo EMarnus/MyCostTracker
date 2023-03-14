@@ -12,34 +12,36 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('costTracker')
 
-sales = SHEET.worksheet('data')
+data_worksheet = SHEET.worksheet('data')
 
-data = sales.get_all_values()
+data = data_worksheet.get_all_values()
+
+data_worksheet.append_row("Test from Python")
 
 print(data)
 
 
-#Add item
+#Add item - Get working and then add try fail states
 
 
 
 
-#Print all objects
+#Print all objects - Get working and then add try fail states
 
 
 
 
-#Delete an object
+#Delete an object - Get working and then add try fail states
 
 
 
 
-#Calculate VAT
+#Calculate VAT - Get working and then add try fail states
 
 
 
 
-#Calculate Margin
+#Calculate Margin - Get working and then add try fail states
 
 
 

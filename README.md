@@ -5,7 +5,7 @@ My Cost Calculator is a program to project managers to easily keep track of ongo
 For example, Love Maths is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also maths. Love Maths is a fully responsive JavaScript maths game that will allow users to add, subtract, multiply and divide numbers. 
 
 [Live site Link]()
-![Responsice Mockup](media/love_maths_mockup.png)
+![Workflow design](https://lucid.app/documents/embedded/e756fa59-d122-44f1-85af-31b39b35ce3f?invitationId=inv_7a6ed2b7-b615-4b97-ba5c-a47263def9a8#)
 
 ## Features 
 
@@ -103,20 +103,15 @@ The live link can be found here - https://code-institute-org.github.io/love-math
 
 ## Credits 
 
-In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
+### Function
 
-You can break the credits section up into Content and Media, depending on what you have included in your project. 
+- How to use google cloud APIs take/learnt from Code Institute Love Sandwich porject
 
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
+- 
+- 
+- 
 
 
 Congratulations on completing your Readme, you have made another big stride in the direction of being a developer! 
