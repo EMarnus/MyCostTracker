@@ -16,7 +16,7 @@ data_worksheet = SHEET.worksheet('data')
 
 data = data_worksheet.get_all_values()
 
-data_worksheet.append_row("Test from Python")
+data_worksheet.append_row()
 
 print(data)
 
