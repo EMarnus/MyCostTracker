@@ -1,6 +1,7 @@
 import gspread
 from dateutil import parser
 from google.oauth2.service_account import Credentials
+import copy
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -73,7 +74,11 @@ Item    Cost    tax     margin
 
 
 #Calculate VAT - Get working and then add try fail states
-#def calc_vat():
+def calc_vat():
+    base_data = get_data()
+    copy.deepcopy(base_data)
+
+
 
 
 
