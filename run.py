@@ -18,7 +18,8 @@ def get_data():
     """
     Pull stored data from google sheet
     """
-
+    active_data = SHEET.worksheet('data').get_all_records()
+    return active_data
 
 
 
@@ -58,7 +59,11 @@ def add_data():
 
 
 #Print all objects - Get working and then add try fail states
+"""
+Prints all rows in googlesheets, only print if Hidden set to false. 
+Item    Cost    tax     margin
 
+"""
 
 
 
@@ -68,13 +73,16 @@ def add_data():
 
 
 #Calculate VAT - Get working and then add try fail states
+#def calc_vat():
 
 
 
 
 #Calculate Margin - Get working and then add try fail states
 
-add_data()
+active_data = get_data()
+
+print(active_data)
 
 
 """
