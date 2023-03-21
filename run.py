@@ -75,8 +75,21 @@ Item    Cost    tax     margin
 
 #Calculate VAT - Get working and then add try fail states
 def calc_vat():
+    """
+    Gets the data from the google sheet, applies the set VAT and then returns result
+    """
+
     base_data = get_data()
-    copy.deepcopy(base_data)
+    working_data = copy.deepcopy(base_data)
+    print(f"Working data {working_data}")
+
+    working_data[0]["gross"] = working_data[0]["cost"] + (working_data[0]["cost"] * (working_data[0]["tax"]/100))
+
+
+        
+
+
+    return working_data
 
 
 
@@ -85,7 +98,9 @@ def calc_vat():
 
 #Calculate Margin - Get working and then add try fail states
 
-active_data = get_data()
+
+
+active_data = calc_vat()
 
 print(active_data)
 
