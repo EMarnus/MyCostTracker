@@ -83,7 +83,8 @@ def calc_vat():
     working_data = copy.deepcopy(base_data)
     print(f"Working data {working_data}")
 
-    working_data[0]["gross"] = working_data[0]["cost"] + (working_data[0]["cost"] * (working_data[0]["tax"]/100))
+    for index in range(len(working_data)):
+        working_data[index]["gross"] = working_data[index]["cost"] + (working_data[index]["cost"] * (working_data[index]["tax"]/100))
 
 
         
