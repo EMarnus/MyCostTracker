@@ -34,7 +34,7 @@ The objects add will be stored and reteived from an external database.
 
 ### Features Left to Implement
 
-- Another feature idea
+- Add a date object to database.
 
 ## Testing 
 
