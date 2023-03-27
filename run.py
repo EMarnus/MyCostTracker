@@ -81,15 +81,10 @@ def calc_vat():
 
     base_data = get_data()
     working_data = copy.deepcopy(base_data)
-    print(f"Working data {working_data}")
 
     for index in range(len(working_data)):
         working_data[index]["gross"] = working_data[index]["cost"] + (working_data[index]["cost"] * (working_data[index]["tax"]/100))
-
-
-        
-
-
+     
     return working_data
 
 
@@ -98,10 +93,20 @@ def calc_vat():
 
 
 #Calculate Margin - Get working and then add try fail states
+def calc_margin():
+    """
+    Gets the data from the google sheet, applies the set VAT, calculates the price with Margin then returns result
+    """
+    working_data = calc_vat()
+    print(working_data)
+
+    for index in range(len(working_data)):
+        working_data[index]["price"] = working_data[index]["gross"] + (working_data[index]["gross"] * (working_data[index]["margin"]/100))
+
+    return working_data
 
 
-
-active_data = calc_vat()
+active_data = calc_margin()
 
 print(active_data)
 
