@@ -70,11 +70,13 @@ Also from stackoverflow https://stackoverflow.com/questions/42235918/python-tabu
 """
 def print_table():
     base_data = calc_margin()
+    new_data = [{k: v for k, v in dictionary.items() if k != 'hidden'} for dictionary in base_data if dictionary['hidden'] == 'FALSE']
 
-    headers = ["item", "cost", "gross", "tax", "margin", "margin", "price"]
-    values = [list(dictionary.values()) for dictionary in base_data]
+    headers = new_data[0].keys()
+    values = [list(dictionary.values()) for dictionary in new_data]
 
     print(tabulate(values, headers=headers))
+
 
 
 
