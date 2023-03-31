@@ -2,6 +2,7 @@ import gspread
 from dateutil import parser
 from google.oauth2.service_account import Credentials
 import copy
+from tabulate import tabulate
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -63,8 +64,15 @@ def add_data():
 """
 Prints all rows in googlesheets, only print if Hidden set to false. 
 Item    Cost    tax     margin
+Example from https://www.educba.com/python-print-table/
 
 """
+def print():
+    data = [[1, 'Liquid', 24, 12],
+    [2, 'Virtus.pro', 19, 14],
+    [3, 'PSG.LGD', 15, 19],
+    [4,'Team Secret', 10, 20]]
+    print (tabulate(data, headers=["Pos", "Team", "Win", "Lose"]))
 
 
 
