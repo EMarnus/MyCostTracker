@@ -76,7 +76,7 @@ The live link can be found here - https://code-institute-org.github.io/love-math
 ### Function
 
 - How to use google cloud APIs take/learnt from Code Institute Love Sandwich porject
-- Help in Printing data from workbook, https://www.educba.com/python-print-table/
+- Help in Printing data from workbook, https://www.educba.com/python-print-table/ and https://stackoverflow.com/questions/42235918/python-tabulate-dictionary-containing-two-values-per-key
 
 ### Content 
 

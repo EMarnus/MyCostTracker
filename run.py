@@ -64,15 +64,17 @@ def add_data():
 """
 Prints all rows in googlesheets, only print if Hidden set to false. 
 Item    Cost    tax     margin
-Example from https://www.educba.com/python-print-table/
+Example from https://www.educba.com/python-print-table/ 
+Also from stackoverflow https://stackoverflow.com/questions/42235918/python-tabulate-dictionary-containing-two-values-per-key
 
 """
-def print():
-    data = [[1, 'Liquid', 24, 12],
-    [2, 'Virtus.pro', 19, 14],
-    [3, 'PSG.LGD', 15, 19],
-    [4,'Team Secret', 10, 20]]
-    print (tabulate(data, headers=["Pos", "Team", "Win", "Lose"]))
+def print_table():
+    base_data = calc_margin()
+
+    headers = ["item", "cost", "gross", "tax", "margin", "margin", "price"]
+    values = [list(dictionary.values()) for dictionary in base_data]
+
+    print(tabulate(values, headers=headers))
 
 
 
@@ -113,10 +115,10 @@ def calc_margin():
 
     return working_data
 
+print_table()
+#active_data = print()
 
-active_data = calc_margin()
-
-print(active_data)
+#print(active_data)
 
 
 """
