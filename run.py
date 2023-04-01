@@ -58,6 +58,8 @@ def add_data():
     print(new_row)
     new_row.append(new_row)
 
+    main()
+
 
 
 #Print all objects - Get working and then add try fail states
@@ -82,6 +84,9 @@ def print_table():
 
 #Delete an object - Get working and then add try fail states
 def del_item():
+    """
+    Prints current items and lets you select an item to hide.
+    """
     base_data = get_data()
     
     #prints to delete from items to select
@@ -100,6 +105,8 @@ def del_item():
     row = worksheet_to_update.row_values(rownum)
 
     worksheet_to_update.update_cell(rownum, 7, 'TRUE')
+
+    main()
 
 
 
@@ -130,18 +137,36 @@ def calc_margin():
     Gets the data from the google sheet, applies the set VAT, calculates the price with Margin then returns result
     """
     working_data = calc_vat()
-    print(working_data)
 
     for index in range(len(working_data)):
         working_data[index]["price"] = working_data[index]["gross"] + (working_data[index]["gross"] * (working_data[index]["margin"]/100))
 
     return working_data
 
-del_item()
-#active_data = print()
 
-#print(active_data)
+def main():
+    """
+    The function the governs user interaction, letting them choose what they want to do.
+    """
+    action = input("1. Enter new data\n2. Print data\n3. Delete entered item\
+\n\nPlease select what you want to do by entering the number \
+of what you want to do: ")   
 
+    action = int(action)
+    
+    if action == 1:
+        add_data()
+    elif action == 2:
+        print_table()
+    elif action == 3:
+        del_item()
+    else:
+        print("\nPlease enter a valid number")
+        main()
+
+
+
+main()
 
 """
 
