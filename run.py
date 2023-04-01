@@ -71,7 +71,7 @@ Also from stackoverflow https://stackoverflow.com/questions/42235918/python-tabu
 def print_table():
     base_data = calc_margin()
     new_data = [{k: v for k, v in dictionary.items() if k != 'hidden'} for dictionary in base_data if dictionary['hidden'] == 'FALSE']
-
+    
     headers = new_data[0].keys()
     values = [list(dictionary.values()) for dictionary in new_data]
 
@@ -81,6 +81,26 @@ def print_table():
 
 
 #Delete an object - Get working and then add try fail states
+def del_item():
+    base_data = get_data()
+    
+    #prints to delete from items to select
+    for item in base_data:
+        print(item.get("item").capitalize())
+
+    to_delete = input("Please enter item you would like to delete: ").lower()
+
+
+    worksheet_to_update = SHEET.worksheet('data')
+
+    #credit for code snip is https://stackoverflow.com/questions/71029282/update-value-in-google-sheet-with-if-condition-in-another-column-using-python
+    records_data = worksheet_to_update.get_all_records()
+    test = worksheet_to_update.col_values(1)
+    rownum = test.index('pen') + 1
+    row = worksheet_to_update.row_values(rownum)
+
+    worksheet_to_update.update_cell(rownum, 7, 'TRUE')
+
 
 
 
@@ -117,7 +137,7 @@ def calc_margin():
 
     return working_data
 
-print_table()
+del_item()
 #active_data = print()
 
 #print(active_data)
