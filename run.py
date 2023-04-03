@@ -160,11 +160,11 @@ def main():
     """
     The function the governs user interaction, letting them choose what they want to do.
     """
-    action = input("1. Enter new data\n2. Print data\n3. Delete entered item\
+    action = inputNumber("1. Enter new data\n2. Print data\n3. Delete entered item\
 \n\nPlease select what you want to do by entering the number \
-of what you want to do: ")   
+of what you want to do: ")
 
-    action = int(action)
+    #action = int(action)
     
     if action == 1:
         add_data()
