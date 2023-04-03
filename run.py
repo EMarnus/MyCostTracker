@@ -24,6 +24,20 @@ def get_data():
     return active_data
 
 
+def inputNumber(message):
+    """
+    Funciton from https://www.101computing.net/number-only/
+    """
+    while True:
+        try:
+            userInput = int(input(message))       
+        except ValueError:
+            print("\nNot a number, please enter a number.")
+            continue
+        else:
+            return userInput 
+            break 
+
 
 #Add item - Get working and then add try fail states
 def add_data():
@@ -35,19 +49,13 @@ def add_data():
     name = input("Enter Item Name: ")
     new_row.append(name)
 
-    cost = input("Enter the cost (Don't use symbom): ")
+    cost = inputNumber("Enter the cost (Don't use symbom): ")
     new_row.append(cost)
     
-    try:
-        tax = input("Enter tax rate for the item (Don't use %)")
-    except:
-        print("Please don't enter a symbol")
+    tax = inputNumber("Enter tax rate for the item (Don't use %)")
     new_row.append(tax)
-
-    try:
-        margin = input("Enter margin rate for the item (Don't use %)")
-    except:
-        print("Please don't enter a symbol")
+        
+    margin = inputNumber("Enter margin rate for the item (Don't use %)")
     new_row.append(margin)
 
     new_row.append("FALSE")
@@ -55,8 +63,8 @@ def add_data():
     worksheet_to_update = SHEET.worksheet('data')
     worksheet_to_update.append_row(new_row)
 
-    print(new_row)
     new_row.append(new_row)
+    print("\n")
 
     main()
 
@@ -78,6 +86,9 @@ def print_table():
     values = [list(dictionary.values()) for dictionary in new_data]
 
     print(tabulate(values, headers=headers))
+    print("\n")
+
+    main()
 
 
 
@@ -105,6 +116,7 @@ def del_item():
     row = worksheet_to_update.row_values(rownum)
 
     worksheet_to_update.update_cell(rownum, 7, 'TRUE')
+    print("\n")
 
     main()
 
@@ -113,7 +125,7 @@ def del_item():
 
 
 #Calculate VAT - Get working and then add try fail states
-def calc_vat():
+def calc_gross():
     """
     Gets the data from the google sheet, applies the set VAT and then returns result
     """
@@ -136,7 +148,7 @@ def calc_margin():
     """
     Gets the data from the google sheet, applies the set VAT, calculates the price with Margin then returns result
     """
-    working_data = calc_vat()
+    working_data = calc_gross()
 
     for index in range(len(working_data)):
         working_data[index]["price"] = working_data[index]["gross"] + (working_data[index]["gross"] * (working_data[index]["margin"]/100))

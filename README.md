@@ -78,6 +78,7 @@ The live link can be found here - https://code-institute-org.github.io/love-math
 - How to use google cloud APIs take/learnt from Code Institute Love Sandwich porject
 - Help in Printing data from workbook, https://www.educba.com/python-print-table/ and https://stackoverflow.com/questions/42235918/python-tabulate-dictionary-containing-two-values-per-key
 - Updating single cell on google sheet using a string as ref, https://stackoverflow.com/questions/71029282/update-value-in-google-sheet-with-if-condition-in-another-column-using-python
+- Input number function from https://www.101computing.net/number-only/
 
 ### Content 
 
