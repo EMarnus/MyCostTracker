@@ -4,7 +4,7 @@ My Cost Calculator is a program to project managers to easily keep track of ongo
 
 For example, Love Maths is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also maths. Love Maths is a fully responsive JavaScript maths game that will allow users to add, subtract, multiply and divide numbers. 
 
-[Live site Link]()
+[Live site Link](https://cost-tracker-ci.herokuapp.com/)
 ![Workflow design](https://lucid.app/documents/embedded/e756fa59-d122-44f1-85af-31b39b35ce3f?invitationId=inv_7a6ed2b7-b615-4b97-ba5c-a47263def9a8#)
 
 ## Features 
@@ -40,6 +40,7 @@ The objects add will be stored and reteived from an external database.
 
 ### Features Left to Implement
 
+- Add way to exit out of function.
 - Add a date object to database.
 - Add a total row when printing.
 
@@ -78,7 +79,8 @@ The objects add will be stored and reteived from an external database.
   - Under Manual Deploy, click Manual Deploy
   - Finally, once the app has been built you can click "View" and test the deployed app.
 
-The live link can be found here - https://code-institute-org.github.io/love-maths/
+The live link can be found here - https://cost-tracker-ci.herokuapp.com/
+The Repository can be found here - https://github.com/EMarnus/MyCostTracker
 
 
 ## Credits 
