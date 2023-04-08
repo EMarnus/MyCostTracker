@@ -61,6 +61,7 @@ The objects add will be stored and reteived from an external database.
 
 - Manual testing done with each function as they are created to ensure they return expected values.
 - Testing of number inputs, first iteration stopped program when non-numbers were entered, changed to provide error feedback and restart.
+- Deplyed site failed to work, unused dateutil. Import removed.
 
 ### Unfixed Bugs
 
@@ -74,7 +75,8 @@ The objects add will be stored and reteived from an external database.
   - Once it's created, go to settings and click the "Reveal Confic Vars" Button, add a pair PORT: 8000 and another CREDS: (the contents of you creds.json file)
   - Add 2 buildpacks, Python and Node.js in that order.
   - Go to the deploy tab, select Github as the Deployment method and link your repo, it should be conntected to your profile if you logged in with Github then you just search for the repo name. When the repo popups click "Connect"
-  - Finally, under Manual Deploy, click Manual Deploy
+  - Under Manual Deploy, click Manual Deploy
+  - Finally, once the app has been built you can click "View" and test the deployed app.
 
 The live link can be found here - https://code-institute-org.github.io/love-maths/
 
