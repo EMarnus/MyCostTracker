@@ -49,13 +49,15 @@ def add_data():
     name = input("Enter Item Name: ")
     new_row.append(name)
 
-    cost = inputNumber("Enter the cost (Don't use symbom): ")
+    cost = inputNumber("Enter the cost (Please don't use symbols): ")
     new_row.append(cost)
     
-    tax = inputNumber("Enter tax rate for the item (Don't use %)")
+    tax = inputNumber("Enter tax rate for the item (Please don't use symbols, \
+20% > 20)")
     new_row.append(tax)
         
-    margin = inputNumber("Enter margin rate for the item (Don't use %)")
+    margin = inputNumber("Enter margin rate for the item (Please don't use \
+symbols, 5% > 5)")
     new_row.append(margin)
 
     new_row.append("FALSE")
@@ -65,6 +67,8 @@ def add_data():
 
     new_row.append(new_row)
     print("\n")
+
+    # Add in question for looping?
 
     main()
 
@@ -104,7 +108,8 @@ def del_item():
     for item in base_data:
         print(item.get("item").capitalize())
 
-    to_delete = input("Please enter item you would like to delete: ").lower()
+    to_delete = input("Please enter the item name from the list above that\
+ you would like to delete: ").lower()
 
 
     worksheet_to_update = SHEET.worksheet('data')
@@ -160,9 +165,11 @@ def main():
     """
     The function the governs user interaction, letting them choose what they want to do.
     """
-    action = inputNumber("1. Enter new data\n2. Print data\n3. Delete entered item\
-\n\nPlease select what you want to do by entering the number \
-of what you want to do: ")
+    action = inputNumber("Welcome to my little program. It allows you to keep\
+ track of your project's costs and have individual VAT and margin \
+percentages.\n\n1. Enter new data\n2. Print data\n3. Delete entered item\
+\n\nPlease select what you want to do by entering a number \
+from the list above: ")
 
     #action = int(action)
     
