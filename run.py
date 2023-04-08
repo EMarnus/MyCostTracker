@@ -165,7 +165,7 @@ def main():
     The function the governs user interaction, letting them choose what they want to do.
     """
     action = inputNumber("Welcome to my little program. It allows you to keep\
- track of your project's costs and have individual VAT and margin \
+ track of your project's \ncosts and have individual VAT and margin \
 percentages.\n\n1. Enter new data\n2. Print data\n3. Delete entered item\
 \n\nPlease select what you want to do by entering a number \
 from the list above: \n")
