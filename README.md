@@ -69,9 +69,12 @@ The objects add will be stored and reteived from an external database.
 ## Deployment
 
 - The site was deployed by Heroku as shown by Code Institute and the repo is on Github. The steps to deploy are as follows: 
-  - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
+  - In the Heroku dashboard, Select "New" then "New App" 
+  - Name your app and select appropriate region.
+  - Once it's created, go to settings and click the "Reveal Confic Vars" Button, add a pair PORT: 8000 and another CREDS: (the contents of you creds.json file)
+  - Add 2 buildpacks, Python and Node.js in that order.
+  - Go to the deploy tab, select Github as the Deployment method and link your repo, it should be conntected to your profile if you logged in with Github then you just search for the repo name. When the repo popups click "Connect"
+  - Finally, under Manual Deploy, click Manual Deploy
 
 The live link can be found here - https://code-institute-org.github.io/love-maths/
 

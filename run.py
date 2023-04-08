@@ -1,5 +1,4 @@
 import gspread
-from dateutil import parser
 from google.oauth2.service_account import Credentials
 import copy
 from tabulate import tabulate
