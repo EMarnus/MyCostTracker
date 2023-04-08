@@ -15,31 +15,33 @@ The objects add will be stored and reteived from an external database.
 
 ## User Experience
 ### User Stories
-#### First Time Visitor Goals
+#### Visitor Goals
 - As a first time user, I want easily understand the main purpose of the website.
-- As a first time user, I want to be able to easily see the options.
-- As a first time user, I want to be able to select set VAT and Margin rates for each cost. 
+- Opening text explains function and acttions that can be taken.
 
-#### Returning Visitor Goals
+- As a first time user, I want to be able to easily see the options.
+- On loading you are presented with a list of options.
+
+- As a first time user, I want to be able to select set VAT and Margin rates for each cost.
+- Each item has an associated VAT and Margin rate that is entered with the item.
+
 - As a returning user, I want to be able retreive previously entered items.
+- There is an option to print all saved items.
 
 
 ### Existing Features
 
-- __UI__
-
-  - The UI is a very basic terminal window
+  - The UI is a very basic terminal window.
+  - Add and store "items", stores on a google sheet.
+  - Print stored items, uses tabulate for readability.
+  - Delete items, Items kept in backend just not printed.
 
 ![Logo](media/love_maths_logo.png)
 
 ### Features Left to Implement
 
 - Add a date object to database.
-
-## Testing 
-
-Manual testing done with each function as they are created to ensure they return expected values.
-
+- Add a total row when printing.
 
 ### Validator Testing 
 
@@ -55,15 +57,18 @@ Manual testing done with each function as they are created to ensure they return
       - Largest function has 10 statements in it, while the median is 3.
       - The most complex function has a cyclomatic complexity value of 4 while the median is 2.
 
+## Testing & fixed bugs
+
+- Manual testing done with each function as they are created to ensure they return expected values.
+- Testing of number inputs, first iteration stopped program when non-numbers were entered, changed to provide error feedback and restart.
+
 ### Unfixed Bugs
 
-You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+- Storing and retreiving Dates for items.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
-
-- The site was deployed to GitHub pages. The steps to deploy are as follows: 
+- The site was deployed by Heroku as shown by Code Institute and the repo is on Github. The steps to deploy are as follows: 
   - In the GitHub repository, navigate to the Settings tab 
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
@@ -79,27 +84,3 @@ The live link can be found here - https://code-institute-org.github.io/love-math
 - Help in Printing data from workbook, https://www.educba.com/python-print-table/ and https://stackoverflow.com/questions/42235918/python-tabulate-dictionary-containing-two-values-per-key
 - Updating single cell on google sheet using a string as ref, https://stackoverflow.com/questions/71029282/update-value-in-google-sheet-with-if-condition-in-another-column-using-python
 - Input number function from https://www.101computing.net/number-only/
-
-### Content 
-
-- 
-- 
-- 
-
-
-Congratulations on completing your Readme, you have made another big stride in the direction of being a developer! 
-
-## Other General Project Advice
-
-Below you will find a couple of extra tips that may be helpful when completing your project. Remember that each of these projects will become part of your final portfolio so it’s important to allow enough time to showcase your best work! 
-
-- One of the most basic elements of keeping a healthy commit history is with the commit message. When getting started with your project, read through [this article](https://chris.beams.io/posts/git-commit/) by Chris Beams on How to Write  a Git Commit Message 
-  - Make sure to keep the messages in the imperative mood 
-
-- When naming the files in your project directory, make sure to consider meaningful naming of files, point to specific names and sections of content.
-  - For example, instead of naming an image used ‘image1.png’ consider naming it ‘landing_page_img.png’. This will ensure that there are clear file paths kept. 
-
-- Do some extra research on good and bad coding practices, there are a handful of useful articles to read, consider reviewing the following list when getting started:
-  - [Writing Your Best Code](https://learn.shayhowe.com/html-css/writing-your-best-code/)
-  - [HTML & CSS Coding Best Practices](https://medium.com/@inceptiondj.info/html-css-coding-best-practice-fadb9870a00f)
-  - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html#General)
