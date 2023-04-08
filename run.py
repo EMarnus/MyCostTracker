@@ -46,18 +46,18 @@ def add_data():
     """
     new_row = [] #Append to this
 
-    name = input("Enter Item Name: ")
+    name = input("Enter Item Name: \n")
     new_row.append(name)
 
-    cost = inputNumber("Enter the cost (Please don't use symbols): ")
+    cost = inputNumber("Enter the cost (Please don't use symbols): \n")
     new_row.append(cost)
     
     tax = inputNumber("Enter tax rate for the item (Please don't use symbols, \
-20% > 20)")
+20% > 20): \n")
     new_row.append(tax)
         
     margin = inputNumber("Enter margin rate for the item (Please don't use \
-symbols, 5% > 5)")
+symbols, 5% > 5): \n")
     new_row.append(margin)
 
     new_row.append("FALSE")
@@ -109,7 +109,7 @@ def del_item():
         print(item.get("item").capitalize())
 
     to_delete = input("Please enter the item name from the list above that\
- you would like to delete: ").lower()
+ you would like to delete: \n").lower()
 
 
     worksheet_to_update = SHEET.worksheet('data')
@@ -169,7 +169,7 @@ def main():
  track of your project's costs and have individual VAT and margin \
 percentages.\n\n1. Enter new data\n2. Print data\n3. Delete entered item\
 \n\nPlease select what you want to do by entering a number \
-from the list above: ")
+from the list above: \n")
 
     #action = int(action)
     
