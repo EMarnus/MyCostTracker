@@ -47,7 +47,7 @@ The objects add will be stored and reteived from an external database.
 ### Validator Testing 
 
 - Python
-    - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-maths%2F)
+    - All PEP8 Errors found by CI Python Linter fixed [CI Python Linter](https://pep8ci.herokuapp.com/)
 
 
 ## Testing & fixed bugs
