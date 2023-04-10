@@ -36,13 +36,13 @@ The objects add will be stored and reteived from an external database.
   - Print stored items, uses tabulate for readability.
   - Delete items, Items kept in backend just not printed.
 
-![Logo](media/love_maths_logo.png)
 
 ### Features Left to Implement
 
 - Add way to exit out of function.
 - Add a date object to database.
 - Add a total row when printing.
+- Add Excel file inport and export function.
 
 ### Validator Testing 
 
@@ -71,7 +71,7 @@ The objects add will be stored and reteived from an external database.
   - Under Manual Deploy, click Manual Deploy
   - Finally, once the app has been built you can click "View" and test the deployed app.
 
-The live link can be found here - https://cost-tracker-ci.herokuapp.com/
+The live link can be found here - https://cost-tracker-ci.herokuapp.com/  
 The Repository can be found here - https://github.com/EMarnus/MyCostTracker
 
 
