@@ -40,7 +40,7 @@ The objects add will be stored and reteived from an external database.
 ### Features Left to Implement
 
 - Add way to exit out of function.
-- Add a date object to database.
+- Add a date object to database, user input.
 - Add a total row when printing.
 - Add Excel file inport and export function.
 
