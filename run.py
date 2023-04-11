@@ -61,11 +61,12 @@ def add_data():
 
     new_row.append("FALSE")
 
+    print("Updating Database\n")
     worksheet_to_update = SHEET.worksheet('data')
     worksheet_to_update.append_row(new_row)
 
     new_row.append(new_row)
-    print("\n")
+    print("Item saved\n")
 
     # Add in question for looping?
 
