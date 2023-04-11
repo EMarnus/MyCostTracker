@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import copy
 from tabulate import tabulate
+import datetime
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -73,6 +74,9 @@ def add_data():
     new_row.append(margin)
 
     new_row.append("FALSE")
+
+    date = datetime.datetime.now()
+    new_row.append(str(date.strftime("%c")))
 
     print("Updating Database\n")
     worksheet_to_update = SHEET.worksheet('data')
@@ -187,6 +191,8 @@ def main():
             main()
 
 main()
+
+
 
 """
 Look at adding dates

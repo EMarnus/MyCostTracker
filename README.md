@@ -60,7 +60,7 @@ The objects add will be stored and reteived from an external database.
 
 ### Unfixed Bugs
 
-- Storing and retreiving Dates for items.
+- Storing and retreiving Manually entered Dates for items.
 
 ## Deployment
 
