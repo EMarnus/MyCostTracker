@@ -52,11 +52,11 @@ def add_data():
     new_row.append(cost)
 
     tax = inputNumber("Enter tax rate for the item (Please don't use symbols, \
-20% > 20): \n")
+    20% > 20): \n")
     new_row.append(tax)
 
     margin = inputNumber("Enter margin rate for the item (Please don't use \
-symbols, 5% > 5): \n")
+    symbols, 5% > 5): \n")
     new_row.append(margin)
 
     new_row.append("FALSE")
@@ -76,13 +76,13 @@ symbols, 5% > 5): \n")
 def print_table():
     """
     Prints all rows from googlesheets, only print if Hidden set to false.\
- Example from https://www.educba.com/python-print-table/
+    Example from https://www.educba.com/python-print-table/
     Also from stackoverflow https://stackoverflow.com/questions/42235918\
-/python-tabulate-dictionary-containing-two-values-per-key
+    /python-tabulate-dictionary-containing-two-values-per-key
     """
     base_data = calc_margin()
     new_data = [{k: v for k, v in dictionary.items() if k != 'hidden'} 
-for dictionary in base_data if dictionary['hidden'] == 'FALSE']
+    for dictionary in base_data if dictionary['hidden'] == 'FALSE']
 
     headers = new_data[0].keys()
     values = [list(dictionary.values()) for dictionary in new_data]
@@ -105,7 +105,7 @@ def del_item():
         print(item.get("item").capitalize())
 
     to_delete = input("Please enter the item name from the list above that\
- you would like to delete: \n").lower()
+    you would like to delete: \n").lower()
 
     worksheet_to_update = SHEET.worksheet('data')
 
@@ -135,7 +135,7 @@ returns result.
 
     for index in range(len(working_data)):
         working_data[index]["gross"] = working_data[index]["cost"] + \
-(working_data[index]["cost"] * (working_data[index]["tax"]/100))
+        (working_data[index]["cost"] * (working_data[index]["tax"]/100))
 
     return working_data
 
@@ -144,13 +144,13 @@ returns result.
 def calc_margin():
     """
     Gets the data from the google sheet, applies the set VAT, calculates the \
-price with Margin then returns result
+    price with Margin then returns result
     """
     working_data = calc_gross()
 
     for index in range(len(working_data)):
         working_data[index]["price"] = (working_data[index]["gross"] + 
-(working_data[index]["gross"] * (working_data[index]["margin"]/100)))
+        (working_data[index]["gross"] * (working_data[index]["margin"]/100)))
 
     return working_data
 
@@ -158,13 +158,13 @@ price with Margin then returns result
 def main():
     """
     The function the governs user interaction, letting them choose what they \
-want to do.
+    want to do.
     """
     action = inputNumber("Welcome to my little program. It allows you to keep\
- track of your project's \ncosts and have individual VAT and margin \
-percentages.\n\n1. Enter new item\n2. Print items\n3. Delete entered item\
-\n\nPlease select what you want to do by entering a number \
-from the list above: \n")
+    track of your project's \ncosts and have individual VAT and margin \
+    percentages.\n\n1. Enter new item\n2. Print items\n3. Delete entered item\
+    \n\nPlease select what you want to do by entering a number \
+    from the list above: \n")
 
 # action = int(action)
 
