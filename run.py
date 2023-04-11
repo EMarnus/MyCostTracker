@@ -83,8 +83,6 @@ def add_data():
 
     # Add in question for looping?
 
-    main()
-
 
 # Print all objects - Get working and then add try fail states
 def print_table():
@@ -103,8 +101,6 @@ def print_table():
     print("\n")
     print(tabulate(values, headers=headers, floatfmt=".2f"))
     print("\n")
-
-    main()
 
 
 # Delete an object - Get working and then add try fail states
@@ -133,8 +129,6 @@ def del_item():
 
     worksheet_to_update.update_cell(rownum, 7, 'TRUE')
     print("\n")
-
-    main()
 
 
 # Calculate VAT - Get working and then add try fail states
@@ -174,24 +168,23 @@ def main():
     The function the governs user interaction, letting them choose what they \
     want to do.
     """
-    action = inputNumber("Welcome to my little program. It allows you to keep\
-    track of your project's \ncosts and have individual VAT and margin \
-    percentages.\n\n1. Enter new item\n2. Print items\n3. Delete entered item\
-    \n\nPlease select what you want to do by entering a number\
-    from the list above: \n")
-
 # action = int(action)
-
-    if action == 1:
-        add_data()
-    elif action == 2:
-        print_table()
-    elif action == 3:
-        del_item()
-    else:
-        print("\nPlease enter a valid number")
-        main()
-
+    while True:
+        action = inputNumber("Welcome to my little program. It allows you to keep\
+        track of your project's \ncosts and have individual VAT and margin \
+        percentages.\n\n1. Enter new item\n2. Print items\n3. Delete entered item\
+        \n\nPlease select what you want to do by entering a number\
+        from the list above: \n")
+        
+        if action == 1:
+            add_data()
+        elif action == 2:
+            print_table()
+        elif action == 3:
+            del_item()
+        else:
+            print("\nPlease enter a valid number")
+            main()
 
 main()
 
