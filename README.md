@@ -55,6 +55,8 @@ The objects add will be stored and reteived from an external database.
 - Manual testing done with each function as they are created to ensure they return expected values.
 - Testing of number inputs, first iteration stopped program when non-numbers were entered, changed to provide error feedback and restart.
 - Deplyed site failed to work, unused dateutil. Import removed.
+- Able to input blank as item name.  
+  ![Print Error](./images/printError.PNG)
 
 ### Unfixed Bugs
 

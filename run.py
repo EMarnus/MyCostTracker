@@ -29,13 +29,26 @@ def inputNumber(message):
     """
     while True:
         try:
-            userInput = int(input(message))
+            userInput = float(input(message))
         except ValueError:
             print("\nNot a number, please enter a number.")
             continue
         else:
             return userInput
             break
+
+
+def inputText(message):
+    """
+    Funciton from https://www.101computing.net/number-only/ and adapted
+    """
+    while True:
+        userInput = input(message)
+
+        if userInput.strip() != "":
+            return userInput
+        else:
+            print("\nPlease enter a meaningful name for the item.")
 
 
 # Add item - Get working and then add try fail states
@@ -45,7 +58,7 @@ def add_data():
     """
     new_row = []  # Append to this
 
-    name = input("Enter Item Name: \n")
+    name = inputText("Enter Item Name: \n")
     new_row.append(name)
 
     cost = inputNumber("Enter the cost (Please don't use symbols): \n")
@@ -82,13 +95,13 @@ def print_table():
     /python-tabulate-dictionary-containing-two-values-per-key
     """
     base_data = calc_margin()
-    new_data = [{k: v for k, v in dictionary.items() if k != 'hidden'} 
-    for dictionary in base_data if dictionary['hidden'] == 'FALSE']
+    new_data = [{k: v for k, v in dictionary.items() if k != 'hidden'} for dictionary in base_data if dictionary['hidden'] == 'FALSE']
 
     headers = new_data[0].keys()
     values = [list(dictionary.values()) for dictionary in new_data]
 
-    print(tabulate(values, headers=headers))
+    print("\n")
+    print(tabulate(values, headers=headers, floatfmt=".2f"))
     print("\n")
 
     main()
@@ -164,7 +177,7 @@ def main():
     action = inputNumber("Welcome to my little program. It allows you to keep\
     track of your project's \ncosts and have individual VAT and margin \
     percentages.\n\n1. Enter new item\n2. Print items\n3. Delete entered item\
-    \n\nPlease select what you want to do by entering a number \
+    \n\nPlease select what you want to do by entering a number\
     from the list above: \n")
 
 # action = int(action)
