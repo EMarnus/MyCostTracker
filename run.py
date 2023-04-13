@@ -70,8 +70,8 @@ def add_data():
     "(Please don't use symbols 20% > 20): \n")
     new_row.append(tax)
 
-    margin = inputNumber("""Enter margin rate for the item "
-    "(Please don't use symbols, 5% > 5): \n""")
+    margin = inputNumber("Enter margin rate for the item "
+    "(Please don't use symbols, 5% > 5): \n")
     new_row.append(margin)
 
     new_row.append("FALSE")
