@@ -52,7 +52,6 @@ def inputText(message):
             print("\nPlease enter a meaningful name for the item.")
 
 
-# Add item - Get working and then add try fail states
 def add_data():
     """
     Add data to the google sheet
@@ -62,16 +61,22 @@ def add_data():
     name = inputText("Enter Item Name: \n")
     new_row.append(name)
 
-    cost = inputNumber("Enter the cost "
-    "(Please don't use symbols): \n")
+    cost = inputNumber(
+        "Enter the cost "
+        "(Please don't use symbols): \n"
+    )
     new_row.append(cost)
 
-    tax = inputNumber("Enter tax rate for the item " 
-    "(Please don't use symbols 20% > 20): \n")
+    tax = inputNumber(
+        "Enter tax rate for the item " 
+        "(Please don't use symbols 20% > 20): \n"
+        )
     new_row.append(tax)
 
-    margin = inputNumber("Enter margin rate for the item "
-    "(Please don't use symbols, 5% > 5): \n")
+    margin = inputNumber(
+        "Enter margin rate for the item "
+        "(Please don't use symbols, 5% > 5): \n"
+        )
     new_row.append(margin)
 
     new_row.append("FALSE")
@@ -86,10 +91,7 @@ def add_data():
     new_row.append(new_row)
     print("Item saved\n")
 
-    # Add in question for looping?
 
-
-# Print all objects - Get working and then add try fail states
 def print_table():
     """
     Prints all rows from googlesheets, only print if Hidden set to false.
@@ -109,25 +111,25 @@ def print_table():
     print("\n")
 
 
-# Delete an object - Get working and then add try fail states
 def del_item():
     """
     Prints current items and lets you select an item to hide.
     """
     base_data = get_data()
 
-    # prints to delete from items to select
     for item in base_data:
         print(item.get("item").capitalize())
 
-    to_delete = input("Please enter the item name from "
-    "the list above that you would like to delete: \n").lower()
+    to_delete = input(
+        "Please enter the item name from "
+        "the list above that you would like to delete: \n"
+        ).lower()
 
     worksheet_to_update = SHEET.worksheet('data')
 
-# credit for code snip is
-# https://stackoverflow.com/questions/71029282/update-
-# value-in-google-sheet-with-if-condition-in-another-column-using-python
+    # credit for code snip is
+    # https://stackoverflow.com/questions/71029282/update-
+    # value-in-google-sheet-with-if-condition-in-another-column-using-python
     records_data = worksheet_to_update.get_all_records()
     test = worksheet_to_update.col_values(1)
     rownum = test.index('pen') + 1
@@ -137,10 +139,9 @@ def del_item():
     print("\n")
 
 
-# Calculate VAT - Get working and then add try fail states
 def calc_gross():
     """
-    Gets the data from the google sheet, applies the set VAT and then 
+    Gets the data from the google sheet, applies the set VAT and then
     returns result.
     """
 
@@ -154,10 +155,9 @@ def calc_gross():
     return working_data
 
 
-# Calculate Margin - Get working and then add try fail states
 def calc_margin():
     """
-    Gets the data from the google sheet, applies the set VAT, calculates the 
+    Gets the data from the google sheet, applies the set VAT, calculates the
     price with Margin then returns result
     """
     working_data = calc_gross()
@@ -171,17 +171,19 @@ def calc_margin():
 
 def main():
     """
-    The function the governs user interaction, letting them choose what they 
+    The function the governs user interaction, letting them choose what they
     want to do.
     """
-# action = int(action)
+    
     while True:
-        action = inputNumber("Welcome to my little program. It allows "
-        "you to keep track of your project's costs and have "
-        "individual VAT and margin percentages.\n\n1. "
-        "Enter new item\n2. Print items\n3. Delete entered item "
-        "\n\nPlease select what you want to do by entering a number"
-        " from the list above: \n")
+        action = inputNumber(
+            "Welcome to my little program. It allows "
+            "you to keep track of your project's costs and have "
+            "individual VAT and margin percentages.\n\n1. "
+            "Enter new item\n2. Print items\n3. Delete entered item "
+            "\n\nPlease select what you want to do by entering a number"
+            " from the list above: \n"
+            )
         
         if action == 1:
             add_data()
@@ -191,21 +193,5 @@ def main():
             del_item()
         else:
             print("\nPlease enter a valid number")
-            main()
 
 main()
-
-
-
-"""
-Look at adding dates
-
-import datetime
-
-input_date = parser.parse(input("Enter a date in DD/MM/YYYY format: "))
-date = input_date.date()
-
-date_entry = input('Enter a date in YYYY-MM-DD format')
-year, month, day = map(int, date_entry.split('-'))
-date1 = datetime.date(year, month, day)
-"""
