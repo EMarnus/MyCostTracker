@@ -62,15 +62,16 @@ def add_data():
     name = inputText("Enter Item Name: \n")
     new_row.append(name)
 
-    cost = inputNumber("Enter the cost (Please don't use symbols): \n")
+    cost = inputNumber("Enter the cost "
+    "(Please don't use symbols): \n")
     new_row.append(cost)
 
-    tax = inputNumber("Enter tax rate for the item (Please don't use symbols, \
-    20% > 20): \n")
+    tax = inputNumber("Enter tax rate for the item " 
+    "(Please don't use symbols 20% > 20): \n")
     new_row.append(tax)
 
-    margin = inputNumber("Enter margin rate for the item (Please don't use \
-    symbols, 5% > 5): \n")
+    margin = inputNumber("""Enter margin rate for the item "
+    "(Please don't use symbols, 5% > 5): \n""")
     new_row.append(margin)
 
     new_row.append("FALSE")
@@ -91,13 +92,14 @@ def add_data():
 # Print all objects - Get working and then add try fail states
 def print_table():
     """
-    Prints all rows from googlesheets, only print if Hidden set to false.\
+    Prints all rows from googlesheets, only print if Hidden set to false.
     Example from https://www.educba.com/python-print-table/
-    Also from stackoverflow https://stackoverflow.com/questions/42235918\
+    Also from stackoverflow https://stackoverflow.com/questions/42235918
     /python-tabulate-dictionary-containing-two-values-per-key
     """
     base_data = calc_margin()
-    new_data = [{k: v for k, v in dictionary.items() if k != 'hidden'} for dictionary in base_data if dictionary['hidden'] == 'FALSE']
+    new_data = ([{k: v for k, v in dictionary.items() if k != 'hidden'}
+     for dictionary in base_data if dictionary['hidden'] == 'FALSE'])
 
     headers = new_data[0].keys()
     values = [list(dictionary.values()) for dictionary in new_data]
@@ -118,8 +120,8 @@ def del_item():
     for item in base_data:
         print(item.get("item").capitalize())
 
-    to_delete = input("Please enter the item name from the list above that\
-    you would like to delete: \n").lower()
+    to_delete = input("Please enter the item name from "
+    "the list above that you would like to delete: \n").lower()
 
     worksheet_to_update = SHEET.worksheet('data')
 
@@ -138,8 +140,8 @@ def del_item():
 # Calculate VAT - Get working and then add try fail states
 def calc_gross():
     """
-    Gets the data from the google sheet, applies the set VAT and then \
-returns result.
+    Gets the data from the google sheet, applies the set VAT and then 
+    returns result.
     """
 
     base_data = get_data()
@@ -155,7 +157,7 @@ returns result.
 # Calculate Margin - Get working and then add try fail states
 def calc_margin():
     """
-    Gets the data from the google sheet, applies the set VAT, calculates the \
+    Gets the data from the google sheet, applies the set VAT, calculates the 
     price with Margin then returns result
     """
     working_data = calc_gross()
@@ -169,16 +171,17 @@ def calc_margin():
 
 def main():
     """
-    The function the governs user interaction, letting them choose what they \
+    The function the governs user interaction, letting them choose what they 
     want to do.
     """
 # action = int(action)
     while True:
-        action = inputNumber("Welcome to my little program. It allows you to keep\
-        track of your project's \ncosts and have individual VAT and margin \
-        percentages.\n\n1. Enter new item\n2. Print items\n3. Delete entered item\
-        \n\nPlease select what you want to do by entering a number\
-        from the list above: \n")
+        action = inputNumber("Welcome to my little program. It allows "
+        "you to keep track of your project's costs and have "
+        "individual VAT and margin percentages.\n\n1. "
+        "Enter new item\n2. Print items\n3. Delete entered item "
+        "\n\nPlease select what you want to do by entering a number"
+        " from the list above: \n")
         
         if action == 1:
             add_data()
