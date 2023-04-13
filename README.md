@@ -42,12 +42,12 @@ The objects add will be stored and reteived from an external database.
 - Add way to exit out of function.
 - Add a date object to database, user input.
 - Add a total row when printing.
-- Add Excel file inport and export function.
+- Add Excel file inport and export function, impossible with current frontend.
 
 ### Validator Testing 
 
 - Python
-    - All PEP8 Errors found by CI Python Linter fixed [CI Python Linter](https://pep8ci.herokuapp.com/)
+    - All PEP8 Errors found by CI Python Linter fixed, mainly white space and indentation. [CI Python Linter](https://pep8ci.herokuapp.com/) 
 
 
 ## Testing & fixed bugs
