@@ -174,7 +174,7 @@ def main():
     The function the governs user interaction, letting them choose what they
     want to do.
     """
-    
+
     while True:
         action = inputNumber(
             "Welcome to my little program. It allows "
@@ -184,13 +184,22 @@ def main():
             "\n\nPlease select what you want to do by entering a number"
             " from the list above: \n"
             )
-        
+
+        database = get_data()
+
         if action == 1:
             add_data()
         elif action == 2:
-            print_table()
+            if len(database) != 0:
+                print_table()
+            else:
+                print("These is noththing to print, please select sommething else.\n")
+
         elif action == 3:
-            del_item()
+            if len(database) != 0:
+                del_item()
+            else:
+                print("These is noththing to delete, please select sommething else.\n")
         else:
             print("\nPlease enter a valid number")
 
