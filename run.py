@@ -58,7 +58,7 @@ def add_data():
     """
     new_row = []  # Append to this
 
-    name = inputText("Enter Item Name: \n")
+    name = inputText("Enter Item Name: \n").lower()
     new_row.append(name)
 
     cost = inputNumber(
@@ -132,10 +132,10 @@ def del_item():
     # value-in-google-sheet-with-if-condition-in-another-column-using-python
     records_data = worksheet_to_update.get_all_records()
     test = worksheet_to_update.col_values(1)
-    rownum = test.index('pen') + 1
+    rownum = test.index(to_delete) + 1
     row = worksheet_to_update.row_values(rownum)
 
-    worksheet_to_update.update_cell(rownum, 7, 'TRUE')
+    worksheet_to_update.update_cell(rownum, 5, 'TRUE')
     print("\n")
 
 

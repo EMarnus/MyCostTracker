@@ -58,10 +58,13 @@ The objects add will be stored and reteived from an external database.
 - Able to input blank as item name.  
   ![Print Error](./images/printError.PNG)
 
+  - When trying to print while the sheet is empty, an error ends program
+  - When trying to delete an item while the sheet is empty, an error ends program
+
 ### Unfixed Bugs
 
 - Storing and retreiving Manually entered Dates for items.
-- If you print the empty sheet you get an error.
+
 
 ## Deployment
 
