@@ -26,7 +26,7 @@ def get_data():
 
 def inputNumber(message):
     """
-    Funciton from https://www.101computing.net/number-only/
+    Function from https://www.101computing.net/number-only/
     """
     while True:
         try:
@@ -41,7 +41,7 @@ def inputNumber(message):
 
 def inputText(message):
     """
-    Funciton from https://www.101computing.net/number-only/ and adapted
+    Function from https://www.101computing.net/number-only/ and adapted
     """
     while True:
         userInput = input(message)
@@ -68,7 +68,7 @@ def add_data():
     new_row.append(cost)
 
     tax = inputNumber(
-        "Enter tax rate for the item " 
+        "Enter tax rate for the item "
         "(Please don't use symbols 20% > 20): \n"
         )
     new_row.append(tax)
@@ -101,7 +101,8 @@ def print_table():
     """
     base_data = calc_margin()
     new_data = ([{k: v for k, v in dictionary.items() if k != 'hidden'}
-     for dictionary in base_data if dictionary['hidden'] == 'FALSE'])
+                for dictionary in base_data
+                if dictionary['hidden'] == 'FALSE'])
 
     headers = new_data[0].keys()
     values = [list(dictionary.values()) for dictionary in new_data]
@@ -150,7 +151,7 @@ def calc_gross():
 
     for index in range(len(working_data)):
         working_data[index]["gross"] = working_data[index]["cost"] + \
-        (working_data[index]["cost"] * (working_data[index]["tax"]/100))
+            (working_data[index]["cost"] * (working_data[index]["tax"]/100))
 
     return working_data
 
@@ -163,8 +164,9 @@ def calc_margin():
     working_data = calc_gross()
 
     for index in range(len(working_data)):
-        working_data[index]["price"] = (working_data[index]["gross"] + 
-        (working_data[index]["gross"] * (working_data[index]["margin"]/100)))
+        working_data[index]["price"] = (working_data[index]["gross"] +
+                                        (working_data[index]["gross"] *
+                                        (working_data[index]["margin"]/100)))
 
     return working_data
 
@@ -193,14 +195,21 @@ def main():
             if len(database) != 0:
                 print_table()
             else:
-                print("These is noththing to print, please select sommething else.\n")
+                print(
+                    "These is noththing to print,"
+                    " please select sommething else.\n"
+                    )
 
         elif action == 3:
             if len(database) != 0:
                 del_item()
             else:
-                print("These is noththing to delete, please select sommething else.\n")
+                print(
+                    "These is noththing to delete, "
+                    "please select sommething else.\n"
+                    )
         else:
             print("\nPlease enter a valid number")
+
 
 main()

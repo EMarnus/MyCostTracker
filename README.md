@@ -1,6 +1,6 @@
 # Cost Calculator
 
-My Cost Calculator is a program to project managers to easily keep track of ongoing costs to a porject.
+My Cost Calculator is a program to project managers to easily keep track of ongoing costs to a project.
 
 For example, Love Maths is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also maths. Love Maths is a fully responsive JavaScript maths game that will allow users to add, subtract, multiply and divide numbers. 
 
@@ -11,13 +11,13 @@ For example, Love Maths is a site that hopes to demonstrate how pure JavaScript 
 
 The program allows users to Add items to the calculator, from there you can Delete the item, Calculate the VAT and Print, Calculate the margin and Print. When first loading the terminal you will set the Global Vat and Margin rates.
 
-The objects add will be stored and reteived from an external database.
+The objects add will be stored and retrieved from an external database.
 
 ## User Experience
 ### User Stories
 #### Visitor Goals
 - As a first time user, I want easily understand the main purpose of the website.
-  - Opening text explains function and acttions that can be taken.  
+  - Opening text explains function and actions that can be taken.  
 
 - As a first time user, I want to be able to easily see the options.
   - On loading you are presented with a list of options.  
@@ -25,7 +25,7 @@ The objects add will be stored and reteived from an external database.
 - As a first time user, I want to be able to select set VAT and Margin rates for each cost.
   - Each item has an associated VAT and Margin rate that is entered with the item.  
 
-- As a returning user, I want to be able retreive previously entered items.
+- As a returning user, I want to be able retrieve previously entered items.
   - There is an option to print all saved items.  
 
 
@@ -42,7 +42,7 @@ The objects add will be stored and reteived from an external database.
 - Add way to exit out of function.
 - Add a date object to database, user input.
 - Add a total row when printing.
-- Add Excel file inport and export function, impossible with current frontend.
+- Add Excel file import and export function, impossible with current frontend.
 
 ### Validator Testing 
 
@@ -54,18 +54,20 @@ The objects add will be stored and reteived from an external database.
 
 - Manual testing done with each function as they are created to ensure they return expected values.
 - Testing of number inputs, first iteration stopped program when non-numbers were entered, changed to provide error feedback and restart.
-- Deplyed site failed to work, unused dateutil. Import removed.
+  ![None int when expected](./images/noneinthandling.PNG)
+- Deployed site failed to work, unused dateutil. Import removed.
 - Able to input blank as item name.  
   ![Print Error](./images/printError.PNG)
   
 - When trying to print while the sheet is empty, an error ends program
 - When trying to delete an item while the sheet is empty, an error ends program
     - Both print and delete errors were fixed but adding a check for the database, Commit 44 "Fix for empty database print & delete errors."
+    ![Empty Database Handling](./images/Empty%20database%20handling.PNG)
 
 
 ### Unfixed Bugs
 
-- Storing and retreiving Manually entered Dates for items.
+- Storing and retrieving Manually entered Dates for items.
 
 
 ## Deployment
@@ -75,7 +77,7 @@ The objects add will be stored and reteived from an external database.
   - Name your app and select appropriate region.
   - Once it's created, go to settings and click the "Reveal Confic Vars" Button, add a pair PORT: 8000 and another CREDS: (the contents of you creds.json file)
   - Add 2 buildpacks, Python and Node.js in that order.
-  - Go to the deploy tab, select Github as the Deployment method and link your repo, it should be conntected to your profile if you logged in with Github then you just search for the repo name. When the repo popups click "Connect"
+  - Go to the deploy tab, select Github as the Deployment method and link your repo, it should be connected to your profile if you logged in with Github then you just search for the repo name. When the repo popups click "Connect"
   - Under Manual Deploy, click Manual Deploy
   - Finally, once the app has been built you can click "View" and test the deployed app.
 
@@ -87,7 +89,7 @@ The Repository can be found here - https://github.com/EMarnus/MyCostTracker
 
 ### Function
 
-- How to use google cloud APIs take/learnt from Code Institute Love Sandwich porject
+- How to use google cloud APIs take/learnt from Code Institute Love Sandwich project
 - Help in Printing data from workbook, https://www.educba.com/python-print-table/ and https://stackoverflow.com/questions/42235918/python-tabulate-dictionary-containing-two-values-per-key
 - Updating single cell on google sheet using a string as ref, https://stackoverflow.com/questions/71029282/update-value-in-google-sheet-with-if-condition-in-another-column-using-python
 - Input number function from https://www.101computing.net/number-only/
