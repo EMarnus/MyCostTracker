@@ -4,14 +4,14 @@ My Cost Calculator is a program to project managers to easily keep track of ongo
 
 For example, Love Maths is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also maths. Love Maths is a fully responsive JavaScript maths game that will allow users to add, subtract, multiply and divide numbers. 
 
-[Live site Link](https://cost-tracker-ci.herokuapp.com/)
+[Live site Link](https://cost-tracker-ci.herokuapp.com/)  
 [Workflow design](https://lucid.app/documents/embedded/e756fa59-d122-44f1-85af-31b39b35ce3f?invitationId=inv_7a6ed2b7-b615-4b97-ba5c-a47263def9a8#)
 
 ## Features 
 
 The program allows users to Add items to the calculator, from there you can Delete the item, Calculate the VAT and Print, Calculate the margin and Print. When first loading the terminal you will set the Global Vat and Margin rates.
 
-The objects add will be stored and retrieved from an external database.
+The objects added will be stored and retrieved from an external database.
 
 ## User Experience
 ### User Stories
@@ -53,15 +53,16 @@ The objects add will be stored and retrieved from an external database.
 ## Testing & fixed bugs
 
 - Manual testing done with each function as they are created to ensure they return expected values.
-- Testing of number inputs, first iteration stopped program when non-numbers were entered, changed to provide error feedback and restart.
+- Testing of number inputs, first iteration stopped program when non-numbers were entered, changed to provide error feedback and restart. [commit](https://github.com/EMarnus/MyCostTracker/commit/c955305574d933fbe153e421d33e1559583ccbea)  
   ![None int when expected](./images/noneinthandling.PNG)
 - Deployed site failed to work, unused dateutil. Import removed.
-- Able to input blank as item name.  
-  ![Print Error](./images/printError.PNG)
+- Able to input blank as item name. 
+  - Added input validation & limit to printing 2 decimals. [commit](https://github.com/EMarnus/MyCostTracker/commit/0867a14ea5412b8e253080d62c9ba473ca6902f8) 
+  - ![Print Error](./images/printError.PNG)    
   
 - When trying to print while the sheet is empty, an error ends program
 - When trying to delete an item while the sheet is empty, an error ends program
-    - Both print and delete errors were fixed but adding a check for the database, Commit 44 "Fix for empty database print & delete errors."
+    - Both print and delete errors were fixed but adding a check for the database, [commit](https://github.com/EMarnus/MyCostTracker/commit/6ccd38bc8930f48c721aae8824aa7ee4614c9358)  
     ![Empty Database Handling](./images/Empty%20database%20handling.PNG)
 
 

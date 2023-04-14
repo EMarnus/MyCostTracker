@@ -155,7 +155,6 @@ def calc_gross():
         gross = cost + (cost * tax_rate)
         working_data[index]["gross"] = gross
 
-        
     return working_data
 
 
@@ -171,7 +170,6 @@ def calc_margin():
         rate = item["margin"]/100
         price = cost + (cost * rate)
         working_data[index]["price"] = price
-
 
     return working_data
 
