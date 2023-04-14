@@ -149,10 +149,13 @@ def calc_gross():
     base_data = get_data()
     working_data = copy.deepcopy(base_data)
 
-    for index in range(len(working_data)):
-        working_data[index]["gross"] = working_data[index]["cost"] + \
-            (working_data[index]["cost"] * (working_data[index]["tax"]/100))
+    for index, item in enumerate(working_data):
+        cost = item["cost"]
+        tax_rate = item["tax"]/100
+        gross = cost + (cost * tax_rate)
+        working_data[index]["gross"] = gross
 
+        
     return working_data
 
 
@@ -163,10 +166,12 @@ def calc_margin():
     """
     working_data = calc_gross()
 
-    for index in range(len(working_data)):
-        working_data[index]["price"] = (working_data[index]["gross"] +
-                                        (working_data[index]["gross"] *
-                                        (working_data[index]["margin"]/100)))
+    for index, item in enumerate(working_data):
+        cost = item["gross"]
+        rate = item["margin"]/100
+        price = cost + (cost * rate)
+        working_data[index]["price"] = price
+
 
     return working_data
 
