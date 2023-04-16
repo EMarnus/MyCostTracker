@@ -60,11 +60,12 @@ The objects added will be stored and retrieved from an external database.
   - Added input validation & limit to printing 2 decimals. [commit](https://github.com/EMarnus/MyCostTracker/commit/0867a14ea5412b8e253080d62c9ba473ca6902f8) 
   - ![Print Error](./images/printError.PNG)    
   
-- When trying to print while the sheet is empty, an error ends program
-- When trying to delete an item while the sheet is empty, an error ends program
+- When trying to print while the sheet is empty, an error ends the program.
+- When trying to delete an item while the sheet is empty, an error ends the program.
     - Both print and delete errors were fixed but adding a check for the database, [commit](https://github.com/EMarnus/MyCostTracker/commit/6ccd38bc8930f48c721aae8824aa7ee4614c9358)  
     ![Empty Database Handling](./images/Empty%20database%20handling.PNG)
 
+- Further testing found that if you delete all items in the database and then try to print you get an error that kills the program.
 
 ### Unfixed Bugs
 

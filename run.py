@@ -99,17 +99,20 @@ def print_table():
     Also from stackoverflow https://stackoverflow.com/questions/42235918
     /python-tabulate-dictionary-containing-two-values-per-key
     """
-    base_data = calc_margin()
-    new_data = ([{k: v for k, v in dictionary.items() if k != 'hidden'}
-                for dictionary in base_data
-                if dictionary['hidden'] == 'FALSE'])
+    try:
+        base_data = calc_margin()
+        new_data = ([{k: v for k, v in dictionary.items() if k != 'hidden'}
+                    for dictionary in base_data
+                    if dictionary['hidden'] == 'FALSE'])
 
-    headers = new_data[0].keys()
-    values = [list(dictionary.values()) for dictionary in new_data]
+        headers = new_data[0].keys()
+        values = [list(dictionary.values()) for dictionary in new_data]
 
-    print("\n")
-    print(tabulate(values, headers=headers, floatfmt=".2f"))
-    print("\n")
+        print("\n")
+        print(tabulate(values, headers=headers, floatfmt=".2f"))
+        print("\n")
+    except TypeError():
+        print("No data to display")
 
 
 def del_item():
