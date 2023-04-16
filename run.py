@@ -138,6 +138,8 @@ def del_item():
 
     worksheet_to_update.update_cell(rownum, 5, 'TRUE')
     print("\n")
+    print(f"{to_delete} has been removed.")
+    print("\n")
 
 
 def calc_gross():
