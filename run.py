@@ -82,7 +82,7 @@ def add_data():
     new_row.append("FALSE")
 
     date = datetime.datetime.now()
-    new_row.append(str(date.strftime("%c")))
+    new_row.append(str(date.strftime("%d/%m/%y")))
 
     print("Updating Database\n")
     worksheet_to_update = SHEET.worksheet('data')
