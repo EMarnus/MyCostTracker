@@ -111,7 +111,9 @@ def print_table():
         print("\n")
         print(tabulate(values, headers=headers, floatfmt=".2f"))
         print("\n")
-    except TypeError():
+    except TypeError:
+        print("No data to display")
+    except IndexError:
         print("No data to display")
 
 
