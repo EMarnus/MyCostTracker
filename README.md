@@ -13,6 +13,13 @@ The program allows users to Add items to the calculator, from there you can Dele
 
 The objects added will be stored and retrieved from an external database.
 
+## Libraries Used
+- gspread - Used as an API to interface with googlesheets.
+- Credentials - Used for Authentication to access our googlesheet
+- copy - Used to make copies of our data for use in Functions without possibility of affecting the sheet.
+- tabulate - Used to print in an easily readable manner.
+- datetime - Used record dates entered, potential future use for manually entered dates.
+
 ## User Experience
 ### User Stories
 #### Visitor Goals
@@ -53,6 +60,10 @@ The objects added will be stored and retrieved from an external database.
 ## Testing & fixed bugs
 
 - Manual testing done with each function as they are created to ensure they return expected values.
+    - Add google API and test, pushing and pulling data from sheet my manually adding data to sheet and console logging it.
+    - Add function for calculating vat, test by manually giving number to work on, duplicate for margin function and same testing.
+    - Add basic print function and test by printing to console, implement tabulate further manual terminal testing.
+
 - Testing of number inputs, first iteration stopped program when non-numbers were entered, changed to provide error feedback and restart. [commit](https://github.com/EMarnus/MyCostTracker/commit/c955305574d933fbe153e421d33e1559583ccbea)  
   ![None int when expected](./images/noneinthandling.PNG)
 - Deployed site failed to work, unused dateutil. Import removed.
@@ -66,10 +77,6 @@ The objects added will be stored and retrieved from an external database.
     ![Empty Database Handling](./images/Empty%20database%20handling.PNG)
 
 - Further testing found that if you delete all items in the database and then try to print you get an error that kills the program. [commit](https://github.com/EMarnus/MyCostTracker/commit/91d267dea2c23a47f4338f246ec7353aba2669cf?diff=split)
-
-### Unfixed Bugs
-
-- Storing and retrieving Manually entered Dates for items.
 
 
 ## Deployment

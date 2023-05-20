@@ -31,12 +31,14 @@ def inputNumber(message):
     while True:
         try:
             userInput = float(input(message))
+            if userInput < 0:
+                print("\n Number must be a positive")
+                continue
         except ValueError:
-            print("\nNot a number, please enter a number.")
+            print("\nNot a number, please enter a positive number.")
             continue
         else:
             return userInput
-            break
 
 
 def inputText(message):
