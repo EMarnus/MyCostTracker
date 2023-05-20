@@ -63,6 +63,8 @@ The objects added will be stored and retrieved from an external database.
     - Add google API and test, pushing and pulling data from sheet my manually adding data to sheet and console logging it.
     - Add function for calculating vat, test by manually giving number to work on, duplicate for margin function and same testing.
     - Add basic print function and test by printing to console, implement tabulate further manual terminal testing.
+    - Add first iteration of Main function, test all 3 functions to make sure they still correctly interact with the data and preform as expected.
+    - Main function rewritten to use While True, improving ease of future feature implementation, all previous test reDone. (Wish I'd known/used JEST...)
 
 - Testing of number inputs, first iteration stopped program when non-numbers were entered, changed to provide error feedback and restart. [commit](https://github.com/EMarnus/MyCostTracker/commit/c955305574d933fbe153e421d33e1559583ccbea)  
   ![None int when expected](./images/noneinthandling.PNG)
