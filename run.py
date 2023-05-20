@@ -124,7 +124,10 @@ def del_item():
     base_data = get_data()
 
     for item in base_data:
-        print(item.get("item").capitalize())
+        try:
+            print(item.get("item").capitalize())
+        except:
+            continue
 
     to_delete = input(
         "Please enter the item name from "
