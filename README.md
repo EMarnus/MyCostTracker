@@ -78,6 +78,8 @@ The objects added will be stored and retrieved from an external database.
 
 - Further testing found that if you delete all items in the database and then try to print you get an error that kills the program. [commit](https://github.com/EMarnus/MyCostTracker/commit/91d267dea2c23a47f4338f246ec7353aba2669cf?diff=split)
 
+- Manual testing to resolve printing and deleting of items with names starting with numbers crashing program revealed that negative VAT and Margin isn't handled. Restricted to only positive numbers. [commit](https://github.com/EMarnus/MyCostTracker/commit/930af21dba755b37cbfd172392c97a8cffead061)
+
 
 ## Deployment
 
