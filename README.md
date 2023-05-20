@@ -65,7 +65,7 @@ The objects added will be stored and retrieved from an external database.
     - Both print and delete errors were fixed but adding a check for the database, [commit](https://github.com/EMarnus/MyCostTracker/commit/6ccd38bc8930f48c721aae8824aa7ee4614c9358)  
     ![Empty Database Handling](./images/Empty%20database%20handling.PNG)
 
-- Further testing found that if you delete all items in the database and then try to print you get an error that kills the program.
+- Further testing found that if you delete all items in the database and then try to print you get an error that kills the program. [commit](https://github.com/EMarnus/MyCostTracker/commit/91d267dea2c23a47f4338f246ec7353aba2669cf?diff=split)
 
 ### Unfixed Bugs
 
