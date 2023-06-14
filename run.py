@@ -128,8 +128,8 @@ def del_item():
     for item in base_data:
         try:
             if item.get("hidden") == "FALSE":
-                print(item.get("item"), item.get("hidden"))
-        except:
+                print(item.get("item"))
+        except Exception:
             continue
 
     to_delete = input(
@@ -146,7 +146,6 @@ def del_item():
         test = worksheet_to_update.col_values(1)
         rownum = test.index(to_delete) + 1
         row = worksheet_to_update.row_values(rownum)
-
 
         worksheet_to_update.update_cell(rownum, 5, 'TRUE')
         print("\n"f"{to_delete} has been removed.""\n")
