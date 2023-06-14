@@ -60,7 +60,7 @@ def add_data():
     """
     new_row = []  # Append to this
 
-    name = inputText("Enter Item Name: \n").lower()
+    name = inputText("Enter Item Name: \n")
     new_row.append(name)
 
     cost = inputNumber(
@@ -127,29 +127,32 @@ def del_item():
 
     for item in base_data:
         try:
-            print(item.get("item").capitalize())
+            if item.get("hidden") == "FALSE":
+                print(item.get("item"), item.get("hidden"))
         except:
             continue
 
     to_delete = input(
         "Please enter the item name from "
         "the list above that you would like to delete: \n"
-        ).lower()
-
+        )
     worksheet_to_update = SHEET.worksheet('data')
 
-    # credit for code snip is
-    # https://stackoverflow.com/questions/71029282/update-
-    # value-in-google-sheet-with-if-condition-in-another-column-using-python
-    records_data = worksheet_to_update.get_all_records()
-    test = worksheet_to_update.col_values(1)
-    rownum = test.index(to_delete) + 1
-    row = worksheet_to_update.row_values(rownum)
+    try:
+        # credit for code snip is
+        # https://stackoverflow.com/questions/71029282/update-
+        # value-in-google-sheet-with-if-condition-in-another-column-using-python
+        records_data = worksheet_to_update.get_all_records()
+        test = worksheet_to_update.col_values(1)
+        rownum = test.index(to_delete) + 1
+        row = worksheet_to_update.row_values(rownum)
 
-    worksheet_to_update.update_cell(rownum, 5, 'TRUE')
-    print("\n")
-    print(f"{to_delete} has been removed.")
-    print("\n")
+
+        worksheet_to_update.update_cell(rownum, 5, 'TRUE')
+        print("\n"f"{to_delete} has been removed.""\n")
+
+    except ValueError:
+        print("\n"f"{to_delete} is not in the list.""\n")
 
 
 def calc_gross():
